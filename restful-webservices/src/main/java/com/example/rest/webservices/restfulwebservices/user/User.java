@@ -2,16 +2,25 @@ package com.example.rest.webservices.restfulwebservices.user;
 
 import java.time.LocalDate;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
 
 //@JsonIgnoreProperties({"id","birthdate"})
+
+@Entity(name="user_details")
 public class User {
 	
+	public User() {
+		
+	}
+	
+	@Id
 	@NotNull(message="Id should not be null")
 	private int id;
 	
